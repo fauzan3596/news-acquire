@@ -8,13 +8,11 @@ export async function getAllArticles() {
     );
     const data = await response.json();
 
-    
     if (!response.ok) {
       throw new Error("Failed to fetch articles, Please wait a moment");
     } else {
       return data.results;
     }
-    return data.results;
   } catch (error) {
     throw new Error(`Failed to fetch all articles: ${error}`);
   }
@@ -33,7 +31,6 @@ export async function getArticlesBySection(section: string) {
     } else {
       return data.results;
     }
-    return data.results;
   } catch (error) {
     throw new Error(
       `Failed to fetch articles for section "${section}": ${error}`
@@ -54,7 +51,6 @@ export async function getArticlesByMostViewedInAMonth() {
     } else {
       return data.results;
     }
-    return data.results;
   } catch (error) {
     throw new Error(
       `Failed to fetch articles by most viewed in a month: ${error}`
@@ -74,7 +70,6 @@ export async function getArticlesByMostViewedInADay() {
     } else {
       return data.results;
     }
-    return data.results;
   } catch (error) {
     throw new Error(
       `Failed to fetch articles by most viewed in a day: ${error}`
